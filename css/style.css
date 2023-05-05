@@ -105,7 +105,7 @@ body {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list-item:last-child {
@@ -154,11 +154,34 @@ body {
   letter-spacing: 0.02em;
   font-weight: 400;
   line-height: 1.5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--active-hover-color);
+}
+
+.nav-list-item {
+  position: relative;
+}
+
+.link-nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--active-hover-color);
+  border-radius: 2px;
+  opacity: 0;
+
+}
+
+.current::after {
+  opacity: 1;
 }
 
 /* header style end  */
@@ -211,7 +234,7 @@ body {
   border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -417,6 +440,7 @@ body {
   background-color: var(--link-text-color);
   color: var(--title-text-color);
   border-radius: 50% 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-link:hover,
@@ -473,6 +497,8 @@ body {
   border: 1px solid var(--customers-border-color);
   border-radius: 4px;
   color: var(--customers-border-color);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -515,7 +541,6 @@ body {
   padding: 12px 24px;
   border: 1px solid var(--btn-filter-color);
   border-radius: 4px;
-
   font-family: "Roboto", sans-serif;
   color: var(--link-text-color);
   background-color: var(--section-bg-color);
@@ -524,6 +549,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
@@ -635,8 +661,8 @@ body {
 
 /* possibility style end */
 
-/* modal box style */
 
+/* modal box style */
 
 .backdrop {
   position: fixed;
@@ -651,7 +677,8 @@ body {
 .is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: visible;
+  visibility: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -744,6 +771,7 @@ body {
   background-color: var(--link-text-color);
   color: var(--title-text-color);
   border-radius: 50% 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-link:hover,
